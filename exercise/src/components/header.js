@@ -4,7 +4,7 @@ export class header extends Component {
   render() {
     return(
     <div>
-    <h1>Header for the exercise</h1>
+    <h1 className='header'>Header for the exercise</h1>
     <p></p>
     </div>
     )
