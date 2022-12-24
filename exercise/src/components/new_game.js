@@ -21,16 +21,16 @@ export class new_game extends Component {
 
       addFormFields() {
         this.setState(({
-          formValues: [...this.state.formValues, {  name: "", number: "",name2: "", number2: ""}]
+          formValues: [...this.state.formValues, {  home_name: "", home_score: "",away_team: "", away_score: ""}]
         }))
       }
       
        resetState () {
         this.setState({
-        name: '',
-        name2: '',
-        number: '',
-        number2: '',
+        home_name: '',
+        away_name: '',
+        away_score: '',
+        home_score: '',
         });
       }
 
@@ -43,9 +43,7 @@ export class new_game extends Component {
       saveStateToLocalStorage = () => { 
         const oldInfo = JSON.parse(localStorage.getItem('data'));
         const newInfo = this.state.formValues
-        console.log(newInfo)
-        console.log(oldInfo)
-        localStorage.setItem('data', JSON.stringify({ oldInfo, newInfo}));
+        localStorage.setItem('data', JSON.stringify({newInfo, oldInfo}));
       } 
 
       handleSubmit(event) {
@@ -71,22 +69,22 @@ export class new_game extends Component {
                         <GiGoalKeeper/>
                     </label>
                     <div>
-                        <input type ='text' name='number'  className='number_input' placeholder='Score' 
-                        value={element.number || ""} onChange={e => this.handleChange(index, e)} />
+                        <input type ='text' name='score'  className='number_input' placeholder='Score' 
+                        value={element.score || ""} onChange={e => this.handleChange(index, e)} />
                     </div>
                 </div>
                 <div className='away_team'>
                 <label htmlFor='name'>
                     Away Team
                 </label>
-                <input type ='text' name="name2" className='name_input' placeholder='Team&#39;s name'
-                    value={element.name2 || ""} onChange={e => this.handleChange(index, e)}/>
+                <input type ='text' name="away_team" className='name_input' placeholder='Team&#39;s name'
+                    value={element.away_team || ""} onChange={e => this.handleChange(index, e)}/>
                 <label className='icon' >
                     <GiGoalKeeper/>
                 </label>
                 <div>
-                <input type ='text' name='number2' className='number_input' placeholder='Score' 
-                    value={element.number2 || ""} onChange={e => this.handleChange(index, e)} /> 
+                <input type ='text' name='away_score' className='number_input' placeholder='Score' 
+                    value={element.away_score || ""} onChange={e => this.handleChange(index, e)} /> 
                 </div> 
                 </div>
                 <button className="button_submit" type="submit">Submit</button>
