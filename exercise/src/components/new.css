@@ -1,4 +1,71 @@
 .form_list{
+    border: 1px solid black;
+    border-radius: 12px;
+    min-width: 515px;
+    max-width:fit-content;      
+
+}
+
+.icon {
+font-size: 25px;
+
+}
+
+.name_input {
+    border-radius: 12px;
+    height: 1.5rem;
+}
+
+.number_input {
+    border-radius: 12px;
+    height: 1.5rem; 
+}
+
+.home_team {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.away_team {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button_add {
+    border-radius: 6px;
+    height: 40px;
+    width:  70px;
+    font-weight: 700;
+    background-color: blue;
+    color: white;
+}
+
+.button_submit {
+    border-radius: 6px;
+    height: 40px;
+    width:  70px;
+    font-weight: 700;
+    background-color: green;
+    color: white;
+}
+
+.button_remove {
+    border-radius: 6px;
+    min-height: 50px;
+    width:  70px;
+    font-weight: 700;
+    background-color: red;
+    color: white;
+}
+
+.button_section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
