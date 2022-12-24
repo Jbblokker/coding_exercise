@@ -7,8 +7,10 @@ export class finished_game extends Component {
         team1score: 3,
         team2score: 4,
     }
-
+    newInfo = ""
+    newData = ""
     teamData = []
+
     // save data to localStorage 
   saveStateToLocalStorage = () => { 
     localStorage.setItem(this.teamData, JSON.stringify(this.data)); 
@@ -19,20 +21,25 @@ export class finished_game extends Component {
     let data = localStorage.getItem('data'); 
     if(data !== undefined) { 
       this.setState(JSON.parse(data)); 
+      this.newInfo = data
     } 
+    this.replaceText()
   } 
-  
+
+  replaceText(){
+  this.newData = this.newInfo.replace(/[\[\]'"_{}]+/g,' ');
+  console.log(this.newData)
+  }
   componentDidMount() { 
     this.saveStateToLocalStorage();
-    this.getStateFromLocalStorage(); 
+    this.getStateFromLocalStorage();
   } 
   
-
   render() {
     return(
     <div className='body'>
-   
-    <p>{this.data.team1}</p>
+ 
+    <p>{this.newData}</p>
     </div>
     )
   }
