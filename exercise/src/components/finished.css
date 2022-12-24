@@ -1,6 +1,7 @@
 .body  {
     border: 3px solid #312c38;
     border-radius: 12px;
+    min-height:2rem;
     min-width: 515px
 }
 

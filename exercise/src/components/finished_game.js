@@ -27,7 +27,9 @@ export class finished_game extends Component {
   } 
 
   replaceText(){
+  if(this.newInfo !== null){
   this.newData = this.newInfo.replace(/[\[\]'"_{}]+/g,' ');
+  }
   console.log(this.newData)
   }
   componentDidMount() { 

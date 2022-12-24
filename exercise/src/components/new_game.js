@@ -8,7 +8,7 @@ export class new_game extends Component {
         super(props);
         this.state = {
          
-          formValues: [{ name: "", number: "" }]
+           formValues: [{ home_team: "", home_score: "",away_team: "", away_score: ""}]
         };
         this.handleSubmit = this.handleSubmit.bind(this)
       }
@@ -21,14 +21,14 @@ export class new_game extends Component {
 
       addFormFields() {
         this.setState(({
-          formValues: [...this.state.formValues, {  home_name: "", home_score: "",away_team: "", away_score: ""}]
+          formValues: [...this.state.formValues, {  home_team: "", home_score: "",away_team: "", away_score: ""}]
         }))
       }
       
        resetState () {
         this.setState({
-        home_name: '',
-        away_name: '',
+        home_team: '',
+        away_team: '',
         away_score: '',
         home_score: '',
         });
@@ -47,11 +47,15 @@ export class new_game extends Component {
       } 
 
       handleSubmit(event) {
-        console.log(this.name)
         event.preventDefault();
         this.saveStateToLocalStorage();
         event.preventDefault();
+        if(this.handleChange === null){
         this.removeFormFields();
+        }
+        else{
+            this.resetState();
+        }
      }
 
   render() {
@@ -63,8 +67,8 @@ export class new_game extends Component {
                     <label className='label_name' htmlFor='name'>
                         Home Team
                     </label> 
-                    <input type ='text' name="name" className='name_input'  placeholder='  Team&#39;s name' 
-                        value={element.name || ""} onChange={e => this.handleChange(index, e)} />
+                    <input type ='text' name="home_team" className='name_input'  placeholder='  Team&#39;s name' 
+                        value={element.home_team || ""} onChange={e => this.handleChange(index, e)} />
                     <label className='icon'>
                         <GiGoalKeeper/>
                     </label>
