@@ -60,44 +60,44 @@ export class new_game extends Component {
           {this.state.formValues.map((element, index) => (
             <div className='newTeam'>
                 <div className='home_team'>
-                    <label htmlFor='name'>
+                    <label className='label_name' htmlFor='name'>
                         Home Team
                     </label> 
-                    <input type ='text' name="name" className='name_input'  placeholder='Team&#39;s name' 
+                    <input type ='text' name="name" className='name_input'  placeholder='  Team&#39;s name' 
                         value={element.name || ""} onChange={e => this.handleChange(index, e)} />
                     <label className='icon'>
                         <GiGoalKeeper/>
                     </label>
                     <div>
-                        <input type ='text' name='score'  className='number_input' placeholder='Score' 
+                        <input type ='text' name='score'  className='number_input' placeholder='  Score' 
                         value={element.score || ""} onChange={e => this.handleChange(index, e)} />
                     </div>
                 </div>
                 <div className='away_team'>
-                <label htmlFor='name'>
-                    Away Team
-                </label>
-                <input type ='text' name="away_team" className='name_input' placeholder='Team&#39;s name'
-                    value={element.away_team || ""} onChange={e => this.handleChange(index, e)}/>
-                <label className='icon' >
-                    <GiGoalKeeper/>
-                </label>
-                <div>
-                <input type ='text' name='away_score' className='number_input' placeholder='Score' 
-                    value={element.away_score || ""} onChange={e => this.handleChange(index, e)} /> 
-                </div> 
+                    <label className='label_name' htmlFor='name'>
+                        Away Team
+                    </label>
+                    <input type ='text' name="away_team" className='name_input' placeholder='  Team&#39;s name'
+                        value={element.away_team || ""} onChange={e => this.handleChange(index, e)}/>
+                    <label className='icon' >
+                        <GiGoalKeeper/>
+                    </label>
+                    <div>
+                        <input type ='text' name='away_score' className='number_input' placeholder='  Score' 
+                        value={element.away_score || ""} onChange={e => this.handleChange(index, e)} /> 
+                    </div> 
                 </div>
-                <button className="button_submit" type="submit">Submit</button>
-                {
-                index ? 
-                  <button type="button"  className="button_remove" onClick={() => this.removeFormFields(index)}>Remove</button> 
-                : null
-              }
+                <div className='button_section'>
+                    <button className="button_submit" type="submit">Submit</button>
+                    {
+                    index ? 
+                    <button type="button"  className="button_remove" onClick={() => this.removeFormFields(index)}>Remove</button> 
+                    : null
+                    }
+                    <button className="button_add" type="button" onClick={() => this.addFormFields()}>Add</button>
+                </div>
             </div>
           ))}
-          <div className="button_section">
-              <button className="button_add" type="button" onClick={() => this.addFormFields()}>Add</button>
-          </div>
       </form>
     );
   }

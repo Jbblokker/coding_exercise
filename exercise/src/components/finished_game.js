@@ -39,7 +39,7 @@ export class finished_game extends Component {
     return(
     <div className='body'>
  
-    <p>{this.newData}</p>
+    <p className='new_data'>{this.newData}</p>
     </div>
     )
   }

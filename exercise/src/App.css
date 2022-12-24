@@ -8,10 +8,26 @@
 
 .header {
   margin-bottom: 3rem;
+  margin-top: -1rem;
 }
 
-
+.headerName {
+  color: #a21a24;
+  font-weight: 700;
+  font-size: 3rem;
+}
 .content {
   display: flex;
-  justify-content:space-around;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.finished_content {
+  margin-left:20rem;
+  margin-right:20rem;
+}
+
+.new_content {
+  margin-left:20rem;
+  margin-right:20rem;
 }

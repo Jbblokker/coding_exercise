@@ -12,13 +12,16 @@ function App() {
         <Header/>
       </div>
       <div className='content'>
-        <h1>New Games</h1>
-        <NewGame/>
-        <h1>Finished Games</h1>
-        <FinishedGame/> 
+        <h1 className='headerName'>New Games</h1>
+        <div className='new_content'>
+          <NewGame/>
+        </div>
+        <h1 className='headerName'>Finished Games</h1>
+        <div className='finished_content'>
+          <FinishedGame/>
+        </div>
       </div>
     </div>
-   
   );
 }
 
