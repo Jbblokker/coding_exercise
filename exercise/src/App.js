@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './App.css';
 
 //component imports
 import NewGame from './components/new_game';
@@ -11,9 +11,11 @@ function App() {
       <div className='header'>
         <Header/>
       </div>
-      <div className='conent'>
+      <div className='content'>
+        <h1>New Games</h1>
         <NewGame/>
-        <FinishedGame/>  
+        <h1>Finished Games</h1>
+        <FinishedGame/> 
       </div>
     </div>
    

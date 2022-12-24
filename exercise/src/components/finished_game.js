@@ -31,7 +31,7 @@ export class finished_game extends Component {
   render() {
     return(
     <div className='body'>
-    <h1 className='title'>Finished Games</h1>
+   
     <p>{this.data.team1}</p>
     </div>
     )
